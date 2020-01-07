@@ -4,8 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.asciidoctor.maven</groupId>
-  <artifactId>asciidoc-to-html-1</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <artifactId>devops</artifactId>
 
   <parent>
     <groupId>org.asciidoctor.maven</groupId>
