@@ -3,14 +3,43 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.asciidoctor.maven</groupId>
-  <artifactId>asciidoc-to-html-2-diagram</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <groupId>org.asciidoctor.maven.ha</groupId>
+  <artifactId>ha-asciidoc-demo</artifactId>
 
   <parent>
     <groupId>org.asciidoctor.maven</groupId>
-    <artifactId>asciidoctor-maven-multimodule</artifactId>
+    <artifactId>ha</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
+
+  <build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>2.6</version>
+      <executions>
+        <execution>
+          <id>copy-icd-resources</id>
+          <phase>process-resources</phase>
+          <goals>
+            <goal>copy-resources</goal>
+          </goals>
+          <configuration>
+            <resources>
+              <resource>
+                <directory>src/main/resources/docs</directory>
+                <includes>
+                  <include>**/*-icd.adoc</include>
+                </includes>
+              </resource>
+            </resources>
+            <outputDirectory>${docs.temp.dir}/content</outputDirectory>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+  </build>
 
 </project>

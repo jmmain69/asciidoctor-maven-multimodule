@@ -1,7 +1,7 @@
+:title: High Altitude (HA) Interfaces
+:section: Third Chapter
 :type: icd
 :status: published
-:title: Hight Altitude (HA) Interfaces
-:section: Third Chapter
 :priority: 002
 
 = {title}

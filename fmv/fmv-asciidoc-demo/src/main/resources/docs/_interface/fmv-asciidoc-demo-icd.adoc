@@ -1,10 +1,25 @@
-:type: icd
-:status: published
 :title: Demo FMV Interface
-:section: Full Motion Video (FMV) Interfaces
-:priority: 003
+:type: interface
+:status: published
+:section: Type II
+:datacontent: document
+:sourcehost: source
+:client: SOAESB
 
-= {title}
 
-this is the a demo interface
+= {title} {section} Interface Description
 
+FMV ART demo interface
+
+
+== Diagrams
+
+
+[plantuml,auth-protocol]
+....
+FMVAlice -> SOAESBob: Authentication Request
+SOAESBob --> FMVAlice: Authentication Response
+
+FMVAlice -> SOAESBob: Another authentication Request
+FMVAlice <-- SOAESBob: another authentication Response
+....
