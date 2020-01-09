@@ -63,7 +63,6 @@ This interface is used to collect the Scene Status and Target Status information
 <#list interfaces as interface>
 <#if (interface.status == "published" && interface.section="Type I")>
 <#assign count++>
-${count} ${interface.title} ${interface.section}
 </#if>
 </#list>
 <#if (count == 0)>
@@ -98,7 +97,6 @@ include::${interface.file}[leveloffset=+3]
 <#assign count=0>
 <#list interfaces as interface>
 <#if (interface.status == "published" && interface.section="Type II")>
-${interface.title} ${interface.section}
 <#assign count++>
 </#if>
 </#list>
@@ -135,7 +133,6 @@ include::${interface.file}[leveloffset=+3]
 <#assign count=0>
 <#list interfaces as interface>
 <#if (interface.status == "published" && interface.section="Type III")>
-${interface.title} ${interface.section}
 <#assign count++>
 </#if>
 </#list>
