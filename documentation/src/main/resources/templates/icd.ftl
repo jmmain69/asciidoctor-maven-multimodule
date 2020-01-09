@@ -89,7 +89,7 @@ None.
 
 <#list interfaces as interface>
 <#if (interface.status == "published" && interface.section="Type I")>
-include::${interface.file}[leveloffset=+2]
+include::${interface.file}[leveloffset=+3]
 </#if>
 </#list>
 
