@@ -140,6 +140,7 @@
               <idseparator>_</idseparator>
               <sectanchors>true</sectanchors>
               <sectlinks>true</sectlinks>
+              <xrefstyle>full</xrefstyle>
               <project-version>${project.version}</project-version>
             </attributes>
           </configuration>

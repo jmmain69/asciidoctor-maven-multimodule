@@ -1,7 +1,7 @@
 :title: HA Demo
 :type: interface
 :status: published
-:section: Type I
+:section: Type II
 :datacontent: document
 :sourcehost: source
 :client: SOAESB
@@ -54,8 +54,4 @@ include::${project.basedir}/src/main/java/example/StringUtils.java[tags=contains
 ----
 
 === Operational Interface Description
-
-
-=== Verification
-
-
+Something Operational.

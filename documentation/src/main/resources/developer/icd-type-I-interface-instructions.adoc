@@ -6,9 +6,25 @@
 :sourcehost:  Where the data originates
 :client: what uses the data
 
+= Type I Interface
+
+Type I interfaces are those interfaces that exist between AF-DCGS system/segments/configuration items (CIs) and any external systems/segments/CIs that are not the domain of the AF-DCGS Program Management Office (PMO).
+The MIL-HDBK-61A (Table 5-15) refers to these inter-system interfaces as System A to System D interfaces; meaning they are serviced by different acquiring activities on different contracts.
+In other words, this type of interface exists between DCGS and any external system such as sensor or platform.
+
+== Creating ICD entry for a Type I Interface
+
+Copy the `icd-type-I-interface-template.adoc` from the documentation/src/main/resources/examples directory.
+Paste the file into the pom level directory of your project, and rename it to `icd-[your interface name].adoc`.
+:toc:
+:imagesdir: assets/images
+:homepage: http://asciidoctor.org
+
+=== Filling in the ICD template
+
 .Header Metadata
 ----
-:title: <1>
+:title: your interface title <1>
 :type: interface <2>
 :status: instructions <3>
 :section: Type I <4>
@@ -34,10 +50,6 @@ For example: SOAESB, Broker, RGS etc....
 This will show up in the table at the start of the Type I Interfaces section of the ICD as Client
 
 == {title} {section} Interface Description
-
-NOTE: Type I interfaces are those interfaces that exist between AF-DCGS system/segments/configuration items (CIs) and any external systems/segments/CIs that are not the domain of the AF-DCGS Program Management Office (PMO).
-The MIL-HDBK-61A (Table 5-15) refers to these inter-system interfaces as System A to System D interfaces; meaning they are serviced by different acquiring activities on different contracts.
-In other words, this type of interface exists between DCGS and any external system such as sensor or platform.
 
 This is a thorough descriptive overview of the first Type I interface.
 It should be focused on a complete set of interface connection points and should include:
@@ -67,10 +79,36 @@ This section should be repeated for each Type I interface listed in the Scope se
 This includes all hardware components that make up the physical data paths e.g. physical ports, wiring, cabling, hubs, switches, etc....
 Furthermore, record all data speeds, transfer rates, throughput levels, transmission frequencies, protocols, and standards.
 
-WARNING: As specific information is added in this section, the classification of the ICD could require upgrade to secret or beyond.
-Either elevate the overall classification level of the document or submit a separate classified addendum.
+WARNING: Do not include classified information in this document.
+As specific information is added in this section, the classification of the ICD could require upgrade to secret or beyond.
+If information would elevate the overall classification level of the document, submit a separate classified addendum conatining that information.
 
-Append/Attach DODAF Model SV2 to this section. https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_sv2/
+Append/Attach DODAF Model SV2 to this section.
+https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_sv2/
+
+Diagrams can be created using Asciidoctor Diagrams.
+See Asciidoctor Diagram for instructions and links on how to create diagrams.
+
+Example:
+[ditaa,asciidoctor-diagram-process]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |  Diagram{io}|       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |cPNK    |---+ Asciidoctor +--->| cGRE          |
+ |   HA   |   +-------------+    |   Beautiful   |
+ |Document|   |cBLK         |    |    Output     |
+ |     {d}|   |   !magic!   |    |      HA    {s}|
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
 
 === Functional Interface Description
 Describes how the interface works and what initiates specific data traffic.

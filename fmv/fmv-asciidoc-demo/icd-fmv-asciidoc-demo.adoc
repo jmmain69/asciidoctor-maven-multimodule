@@ -45,6 +45,5 @@ FMVAlice <-- SOAESBob: another authentication Response
 
 === Operational Interface Description
 
-
-=== Verification
+Something Operationsal.
 

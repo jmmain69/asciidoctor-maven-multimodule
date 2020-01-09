@@ -1,0 +1,52 @@
+:title: IRISS to SOA ESB
+:type: interface
+:status: published
+:section: Type III
+:datacontent: PNCSA
+:sourcehost:  IRISS
+:client: SOAESB Broker
+
+= {title} {section} Interface Description
+
+The ${branding} IRISS messaging interface provides a method for IRISS to deliver its PNCSA (GlobalHawk) H&S information into the HA system.
+(SOA ESB then exposes the PNCSA on another topic, but that is out of scope of this interface).
+
+1.	Provide an interface for IRISS to deliver and disseminate its PNCSA information
+2.	Users like to have situational awareness of the mission; this interface is one step in delivering the SA information to the user
+3.	IRISS sends PNCSA to the input queue on ${branding} Broker
+
+
+== Secondary System Configuration Item Description
+IRISS is used to receive H&S information from the GlobalHawk.
+It then compiles and processes the information into PNCSA, which it in turn sends to ${branding} input queue to publish a message.
+Any client that connects to the publication topic can consume the messages.
+
+== DCGS Interfacing CI Description
+
+
+== Description of Secondary-System-CI to DCGS-CI Interface
+
+=== Physical Interface Description
+
+See <<Connecting to the Broker>>
+
+=== Functional Interface Description
+
+[ditaa,IRIS-SOAESB-Diagram]
+....
+/-------------+  PNCSA data  +-----------------------+
+|    IRIS     |------------->|cGRE SOAESB Broker     |
++-------------/              +-----------------------+
+....
+
+IRISS sends PNCSA data to the topic:
+----
+include::${project.basedir}/src/main/resources/broker.xml.epp[tags=irisInputTopic]
+----
+
+=== Logical Interface Description
+The schema for PNCSA can be found in the HA ART IRISS ICD.
+The schema is not defined by the interface; it just needs to be a protocol that the ${branding} Broker understands, such as AMQPS.
+
+=== Operational Interface Description
+The IRISS to SOA ESB interface is used to transfer GlobalHawk operational, mission, and situational awareness data into the HA ART system. This allows the client mission application to provide a common operational picture of the ISR environment.

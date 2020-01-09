@@ -6,6 +6,8 @@
 :sectnumlevels: 5
 :toc:
 :toclevels: 3
+:xrefstyle: full
+:!section-refsig:
 
 = {title}
 
@@ -78,9 +80,9 @@ None.
 <#assign ifNum++>
 |${ifNum}
 |<<${interface.title} ${interface.section} Interface Description,${interface.title}>>
-|<meta property="datacontent"/>
-|<meta property="sourcehost"/>
-|<meta property="client"/>
+|${interface.datacontent}
+|${interface.sourcehost}
+|${interface.client}
 </#if>
 </#list>
 |===
@@ -163,3 +165,8 @@ include::${interface.file}[leveloffset=+3]
 
 </#if>
 </#list>
+
+== Some Appendix or something
+
+=== Connecting to the Broker
+Describes how to connect to the Broker.

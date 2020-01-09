@@ -12,8 +12,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <asciidoctor.maven.plugin.version>1.5.3</asciidoctor.maven.plugin.version>
-    <asciidoctorj.version>1.5.4.1</asciidoctorj.version>
+    <asciidoctor.maven.plugin.version>1.5.7</asciidoctor.maven.plugin.version>
+    <asciidoctorj.version>1.5.7</asciidoctorj.version>
     <asciidoctorj.diagram.version>1.5.0</asciidoctorj.diagram.version>
     <asciidoctorj.pdf.version>1.5.0-rc.1</asciidoctorj.pdf.version>
     <jruby.version>9.2.8.0</jruby.version>
@@ -104,6 +104,7 @@
   <modules>
     <module>fmv</module>
     <module>ha</module>
+    <module>broker</module>
     <module>documentation</module>
   </modules>
 
