@@ -15,6 +15,23 @@
   <build>
   <plugins>
     <plugin>
+      <artifactId>maven-antrun-plugin</artifactId>
+      <executions>
+        <execution>
+          <phase>initialize</phase>
+          <configuration>
+            <target>
+              <echo>Test Docs Directory: ${execution-root}/target/docs</echo>
+              <echo>Project Directory: ${project.basedir}</echo>
+            </target>
+          </configuration>
+          <goals>
+            <goal>run</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+    <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-resources-plugin</artifactId>
       <version>2.6</version>
@@ -28,13 +45,14 @@
           <configuration>
             <resources>
               <resource>
-                <directory>src/main/resources/docs</directory>
+                <directory>${project.basedir}</directory>
+                <filtering>true</filtering>
                 <includes>
-                  <include>**/*-icd.adoc</include>
+                  <include>*-icd.adoc</include>
                 </includes>
               </resource>
             </resources>
-            <outputDirectory>${docs.temp.dir}/content</outputDirectory>
+            <outputDirectory>${execution-root}/target/docs/content/_interface</outputDirectory>
           </configuration>
         </execution>
       </executions>

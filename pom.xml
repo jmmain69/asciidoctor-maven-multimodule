@@ -17,9 +17,9 @@
     <asciidoctorj.diagram.version>1.5.0</asciidoctorj.diagram.version>
     <asciidoctorj.pdf.version>1.5.0-rc.1</asciidoctorj.pdf.version>
     <jruby.version>9.2.8.0</jruby.version>
-    <jbake.maven.plugin.version>0.0.9</jbake.maven.plugin.version>
+    <jbake.maven.plugin.version>0.3.1</jbake.maven.plugin.version>
 
-    <docs.temp.dir>/data/documentation/target/docs/</docs.temp.dir>
+    <docs.temp.dir>${execution-root}/documentation/target/docs/</docs.temp.dir>
     <branding>SOAESB</branding>
   </properties>
 
@@ -31,6 +31,17 @@
       -->
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.8</version>
+        </plugin>
+        <plugin>
+          <groupId>org.commonjava.maven.plugins</groupId>
+          <artifactId>directory-maven-plugin</artifactId>
+          <version>0.3.1</version>
+        </plugin>
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
@@ -45,31 +56,20 @@
       -->
     <plugins>
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
-          <executions>
-              <execution>
-                  <id>copy-asciidoc-resources</id>
-                  <phase>process-resources</phase>
-                  <goals>
-                      <goal>copy-resources</goal>
-                  </goals>
-                  <configuration>
-                      <resources>
-                          <resource>
-                              <directory>src/docs</directory>
-                              <includes>
-                                  <include>**/*.adoc</include>
-                                  <include>**/*.jpg</include>
-                                  <include>**/*.png</include>
-                              </includes>
-                          </resource>
-                      </resources>
-                      <outputDirectory>${execution-root}/content</outputDirectory>
-                  </configuration>
-              </execution>
-          </executions>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>directory-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>directories</id>
+            <goals>
+              <goal>execution-root</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <property>execution-root</property>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
     <!--</pluginManagement>-->

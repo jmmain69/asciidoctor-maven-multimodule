@@ -1,9 +1,0 @@
-:title: High Altitude (HA) Interfaces
-:section: Third Chapter
-:type: icd
-:status: published
-:priority: 002
-
-= {title}
-
-This defines the HA interfaces

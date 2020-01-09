@@ -28,13 +28,13 @@
             <configuration>
               <resources>
                 <resource>
-                  <directory>src/main/resources/docs</directory>
+                  <directory>${project.basedir}</directory>
                   <includes>
-                    <include>**/*-icd.adoc</include>
+                    <include>*-icd.adoc</include>
                   </includes>
                 </resource>
               </resources>
-              <outputDirectory>${docs.temp.dir}/content</outputDirectory>
+              <outputDirectory>${execution-root}/target/docs/content/_interface</outputDirectory>
             </configuration>
           </execution>
         </executions>

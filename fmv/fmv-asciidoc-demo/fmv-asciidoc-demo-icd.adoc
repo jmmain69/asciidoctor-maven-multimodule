@@ -1,0 +1,50 @@
+:title: Demo FMV Interface
+:type: interface
+:status: published
+:section: Type II
+:keywords: {document, source, SOAESB}
+:datacontent: document
+:sourcehost: source
+:client: SOAESB
+
+
+= {title} {section} Interface Description
+
+FMV ART demo interface
+
+== Secondary System Configuration Item Description
+
+FMV system
+
+== DCGS Interfacing CI Description
+
+SOAESB Broker
+
+== Description of Secondary-System-CI to DCGS-CI Interface
+
+FMV system sends requests to SOAESB broker
+
+=== Physical Interface Description
+
+Uses internet magic on port 577
+
+=== Functional Interface Description
+
+[plantuml,auth-protocol]
+....
+FMVAlice -> SOAESBob: Authentication Request
+SOAESBob --> FMVAlice: Authentication Response
+
+FMVAlice -> SOAESBob: Another authentication Request
+FMVAlice <-- SOAESBob: another authentication Response
+....
+
+
+=== Logical Interface Description
+
+
+=== Operational Interface Description
+
+
+=== Verification
+
