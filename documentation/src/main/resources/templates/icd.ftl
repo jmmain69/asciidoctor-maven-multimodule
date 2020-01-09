@@ -58,6 +58,7 @@ This interface is used to collect the Scene Status and Target Status information
 == REQUIREMENTS
 
 === Type I Interfaces
+
 <#assign count=0>
 <#list interfaces as interface>
 <#if (interface.status == "published" && interface.section="Type I")>
@@ -131,4 +132,37 @@ include::${interface.file}[leveloffset=+3]
 
 === Type III Interfaces
 
+<#assign count=0>
+<#list interfaces as interface>
+<#if (interface.status == "published" && interface.section="Type III")>
+${interface.title} ${interface.section}
+<#assign count++>
+</#if>
+</#list>
+<#if (count == 0)>
+None.
+</#if>
+<#if (count != 0)>
+<#assign ifNum=0>
+[%header,cols=5*]
+|===
+|I/F No. |I/F Title |Data Content |Source Host |Client
+<#list interfaces as interface>
+<#if (interface.status == "published" && interface.section="Type III")>
+<#assign ifNum++>
+|${ifNum}
+|<<${interface.title} ${interface.section} Interface Description,${interface.title}>>
+|${interface.datacontent}
+|${interface.sourcehost}
+|${interface.client}
+</#if>
+</#list>
+|===
+</#if>
 
+<#list interfaces as interface>
+<#if (interface.status == "published" && interface.section="Type III")>
+include::${interface.file}[leveloffset=+3]
+
+</#if>
+</#list>
