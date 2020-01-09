@@ -30,7 +30,7 @@ Uses internet magic on port 577
 
 === Functional Interface Description
 
-[plantuml,auth-protocol]
+[plantuml,FMVauth-protocol]
 ....
 FMVAlice -> SOAESBob: Authentication Request
 SOAESBob --> FMVAlice: Authentication Response
