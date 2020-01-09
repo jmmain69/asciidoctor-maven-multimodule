@@ -132,6 +132,9 @@
             <sourceDirectory>${project.build.directory}/asciidoctor-ready-${project.version}</sourceDirectory>
             <outputDirectory>${project.build.directory}/docs/pdf</outputDirectory>
             <attributes>
+              <imagesdir>${project.build.directory}/asciidoctor-ready-${project.version}/images</imagesdir>
+              <imagesoutdir>${project.build.directory}/asciidoctor-ready-${project.version}/images</imagesoutdir>
+              <icons>font</icons>
               <pagenums />
               <idprefix>_</idprefix>
               <idseparator>_</idseparator>
