@@ -7,6 +7,12 @@ Jbake then uses a template to assmble the pieces of the ICD docs into the comple
 
 The benifit to this method is that when a new ICD element is added, the developer simply has to use the template and the documentation wil automatically get updated.
 
+== Build Instructions
+
+Run `mvn clean install` from the asciidoctor-maven-multimodule directory.
+
+The ICD document will be in documentation/target/docs/pdf.
+
 == How it Works
 In the developers project, they include an adoc that starts with icd-, example: `icd-ha-interface.adoc`.
 The maven-resources-plugin from the root pom filter copies that adoc to the common folder in the parent pom's target directory during a build.
