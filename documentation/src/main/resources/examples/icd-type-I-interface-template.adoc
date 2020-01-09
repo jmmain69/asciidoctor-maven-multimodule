@@ -1,0 +1,27 @@
+:title: Title
+:type: interface
+:status: demo
+:section: Type I
+:datacontent: content
+:sourcehost:  source
+:client: client
+
+== {title} {section} Interface Description
+
+
+== Secondary System Configuration Item Description
+
+== DCGS Interfacing CI Description
+
+== Description of Secondary-System-CI to DCGS-CI Interface
+
+=== Physical Interface Description
+
+=== Functional Interface Description
+
+=== Logical Interface Description
+
+=== Operational Interface Description
+
+=== Verification
+

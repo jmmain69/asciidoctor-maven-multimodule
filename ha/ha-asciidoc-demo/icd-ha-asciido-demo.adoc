@@ -1,0 +1,61 @@
+:title: HA Demo
+:type: interface
+:status: published
+:section: Type II
+:datacontent: document
+:sourcehost: source
+:client: SOAESB
+
+= {title} {section} Interface Description
+
+HA ART blah blah blah
+
+== Secondary System Configuration Item Description
+
+Connects ha art to soaesb to make documents pretty
+
+== DCGS Interfacing CI Description
+
+none
+
+== Description of Secondary-System-CI to DCGS-CI Interface
+
+none
+
+=== Physical Interface Description
+
+source system to soaesb via can/wan
+
+=== Functional Interface Description
+
+[ditaa,asciidoctor-diagram-process]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |  Diagram{io}|       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ | cPNK   |---+ Asciidoctor +--->| cGRE          |
+ |   HA   |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |      HA    {s}|
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+=== Logical Interface Description
+
+----
+include::${project.basedir}/src/main/java/example/StringUtils.java[tags=contains]
+----
+
+=== Operational Interface Description
+
+
+=== Verification
+
+

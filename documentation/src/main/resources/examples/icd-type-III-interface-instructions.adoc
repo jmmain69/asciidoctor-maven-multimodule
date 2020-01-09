@@ -1,0 +1,98 @@
+:title:
+:type: interface
+:status: instructions
+:section: Type III
+:datacontent: the type of data used by the interface
+:sourcehost:  Where the data originates
+:client: what uses the data
+
+.Header Metadata
+----
+:title: <1>
+:type: interface <2>
+:status: instructions <3>
+:section: Type III <4>
+:datacontent: the type of data used by the interface <5>
+:sourcehost:  Where the data originates <6>
+:client: what uses the data <7>
+----
+
+<1> Title of the interface section.
+It's used at the beginning of the the of Type III interfaces as the interface title, and in header below.
+<2> Type of document, use by Jbake to filter adoc files in templates.
+Must be `interface` to be included in the ICD.
+<3> The status of this document, used by Jbake to filter adco files in templates.
+Must be `published` to be included in the ICD.
+<4> The ICD section this interface goes into; always `Type III` for a type III interface.  Also used in the interface description section header.
+<5> the typ of data that this interface uses.
+This item will show up in the interfaces table at the start of the Type III Interfaces section of the ICD as Data Content.
+<6> the source sending the data content.
+For example: SOAESB, Broker, RGS, UNICORN etc....
+This will show up in the table at the start of the Type III Interfaces section of the ICD as Source Host
+<7> the client that receives the data content.
+For example: SOAESB, Broker, RGS etc....
+This will show up in the table at the start of the Type III Interfaces section of the ICD as Client
+
+== {title} {section} Interface Description
+
+NOTE: Type III interfaces provide information exchange between CIs within any given AF-DCGS segment.
+The Mil-hdbk-61 defines these intra-segment interfaces as System A to System B interfaces because they are under the same contract and same acquiring activity.
+In DCGS the Type III interface falls under the control of the AF-DCGS segment manager, along with the AF-DCGS SPM, but lines of contractual authority are encompassed within each segment contract(s).
+
+This is a thorough overview description which is focused on a single DCGS inter-segment interface connection point.
+It should include the specific interface connection point's purpose, a concept of operations that focuses on the data exchange between components and systems and the format of the data being passed.
+In addition a general data-flow description is essential to this section.
+Specifics to be include are:
+
+1.	The interface's purpose
+2.	The user requirement that it satisfies
+3.	A general concept of operations that emphasizes the data exchange between the systems and the format of the data being passed.
+4.	Include a data-flow description and diagram for operational capabilities assessment purposes.
+5.	Timing and sequencing constraints
+6.	Performance/Capacity and requirements
+7.	Timing and sequencing controls
+
+== Secondary System Configuration Item Description
+This is a component level description of the specific Secondary System CI involved in the interface, including the CI's role in the interface.
+A Secondary System CI Description must exist for each piece of equipment or service requesting access to the DCGS.
+
+== DCGS Interfacing CI Description
+This is a DCGS-centric description similar to 3.2.1., but in reference to the specific DCGS CI involved in the interface.
+
+== Description of Secondary-System-CI to DCGS-CI Interface
+Once all components have been explained, this section describes the interfaces between them.
+This section should be repeated for each Type I interface listed in the Scope section.
+
+=== Physical Interface Description
+This includes all hardware components that make up the physical data paths e.g. physical ports, wiring, cabling, hubs, switches, etc....
+Furthermore, record all data speeds, transfer rates, throughput levels, transmission frequencies, protocols, and standards.
+
+WARNING: As specific information is added in this section, the classification of the ICD could require upgrade to secret or beyond.
+Either elevate the overall classification level of the document or submit a separate classified addendum.
+
+Append/Attach DODAF Model SV2 to this section. https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_sv2/
+
+=== Functional Interface Description
+Describes how the interface works and what initiates specific data traffic.
+A complete end-to-end illustrative data flow and event sequencing description is required for this section.
+Diagrams are appropriate to provide context for the specific interface.
+
+Append/Attach DODAF Models OV3, SV1 and SV-6 to this section. https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_models/
+
+=== Logical Interface Description
+This section describes all data/information exchange structures.
+It includes all word formats, XML schemas, Data Dictionaries, transport wrappers, logical ports, logical protocols such as HTTP(S), SMTP, SOAP, WSDL, applicable database commands, etc...and all API data.
+If a reference to an external document (e.g. WSDL, ICD...) is necessary to complete this section it must be government acceptable, fully cited, and accessible to the program office.
+Otherwise, it must be included fully or appended to this document.
+Append/Attach DODAF Model, AV2 (Data Dictionary) to this section
+https://dodcio.defense.gov/Library/DoD-Architecture-Framework/dodaf20_models/
+
+=== Operational Interface Description
+This section is composed of a compiled system of operational data flow and use case scenarios that completely demonstrate the all-encompassing use of the interface as used in a credible real world environment.  The use-case scenarios should demonstrate reasons/causes for data exchange and the end results of the exchanges.  Append/Attach DODAF Models OV-5b, OV-6c, and SV-5a to this section.
+
+=== Verification
+Include references from the AT, IAT, DT, OT or SAT that prove the validity and operability of the interface.
+Be specific.
+List the name of the test plan, the date of the test, location of the test, and the exact step(s) that prove the interface works as it was designed to do.
+The referenced test(s) must be government acceptable, fully cited, and accessible to the program office.
+Otherwise a signed copy of it must be included fully or appended to this document.

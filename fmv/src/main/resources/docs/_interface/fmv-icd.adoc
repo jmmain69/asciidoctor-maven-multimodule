@@ -1,0 +1,14 @@
+:type: icd
+:status: published
+:title: Full Motion Video (FMV) Interfaces
+:section: Third Chapter
+:priority: 002
+
+= {title}
+
+This is a demo for FMV interfaces.
+
+== Introduction
+
+This inteface does something.
+We just haven't decided what that is yet.
